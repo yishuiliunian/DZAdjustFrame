@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "AdjustFrame.h"
 @interface DZGrowTextView : UITextView
 
 @end
