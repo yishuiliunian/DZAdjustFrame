@@ -1,0 +1,6 @@
+framework module DZAdjustFrame {
+  umbrella header "Pods-DZAdjustFrame_Example-DZAdjustFrame-umbrella.h"
+
+  export *
+  module * { export * }
+}

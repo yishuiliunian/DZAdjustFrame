@@ -1,0 +1,6 @@
+framework module Pods_DZAdjustFrame_Tests {
+  umbrella header "Pods-DZAdjustFrame_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

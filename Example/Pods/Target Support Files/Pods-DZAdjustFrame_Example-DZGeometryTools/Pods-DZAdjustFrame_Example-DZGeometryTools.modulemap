@@ -1,0 +1,6 @@
+framework module DZGeometryTools {
+  umbrella header "Pods-DZAdjustFrame_Example-DZGeometryTools-umbrella.h"
+
+  export *
+  module * { export * }
+}
