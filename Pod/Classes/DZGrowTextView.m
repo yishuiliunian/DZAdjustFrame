@@ -24,7 +24,6 @@
         return self;
     }
     _needUpdateTextHeight = YES;
-    self.numberOfLines = 0;
     return self;
 }
 - (void) setText:(NSString *)text

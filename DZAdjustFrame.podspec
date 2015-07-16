@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "DZAdjustFrame"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "自动适配高度的一个简易框架"
   s.description      = <<-DESC
                        自动适配高度的一个简易框架, 自动设置高度。

@@ -12,6 +12,10 @@
 static void* kLTAdjustFrameHeight = &kLTAdjustFrameHeight;
 @implementation UIView ( AdjustFrame)
 
+- (BOOL) hintAdjustSupreView
+{
+    return YES;
+}
 - (CGFloat) adjustHeight
 {
     CGFloat height =  CGRectGetHeight(self.frame);

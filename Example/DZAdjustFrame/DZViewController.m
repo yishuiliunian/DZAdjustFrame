@@ -7,7 +7,7 @@
 //
 
 #import "DZViewController.h"
-
+#import <DZAdjustFrame/DZGrowLabel.h>
 @interface DZViewController ()
 
 @end
