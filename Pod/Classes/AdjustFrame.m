@@ -12,6 +12,10 @@
 static void* kLTAdjustFrameHeight = &kLTAdjustFrameHeight;
 @implementation UIView ( AdjustFrame)
 
+- (void) handleAdjustFrame
+{
+    
+}
 - (BOOL) hintAdjustSupreView
 {
     return YES;
