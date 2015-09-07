@@ -26,6 +26,8 @@
 		5B28CAF02B9FB82F53A07261 /* UIDeviceHardware.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D55C28177F7E63598BDC068 /* UIDeviceHardware.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C979E372F0B5A4C946A3733 /* DZAdjustFrame.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7FF4556EE51577C481AAD473 /* DZAdjustFrame.bundle */; };
 		62478C60BD74B6E4EAD42B2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF5E084B6F992631C0F28FD /* Foundation.framework */; };
+		650DEBE31B9DB6600031B549 /* DZAdjustTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 650DEBE11B9DB6600031B549 /* DZAdjustTableView.h */; };
+		650DEBE41B9DB6600031B549 /* DZAdjustTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 650DEBE21B9DB6600031B549 /* DZAdjustTableView.m */; };
 		65FF5A20D016CE8B75F920F6 /* AdjustFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C1BC12BEB4B7EA27CFFBF /* AdjustFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6634206B7E370A9C2FE3914E /* DZGrowLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B097EC832E3D4F44E2E2DF /* DZGrowLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		669BEDB2C0173C91660195A8 /* DZAdjustFrame.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 994427CBE53275A4975E3209 /* DZAdjustFrame.bundle */; };
@@ -170,6 +172,8 @@
 		618B10058CB5267FED227E5C /* DZDevices.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DZDevices.h; path = Pod/Classes/DZDevices.h; sourceTree = "<group>"; };
 		62C50C0CECB30CAE15094865 /* Pods-DZAdjustFrame_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DZAdjustFrame_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		64D267E7C1716F40881F3AE5 /* DZGeometryTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DZGeometryTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		650DEBE11B9DB6600031B549 /* DZAdjustTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZAdjustTableView.h; sourceTree = "<group>"; };
+		650DEBE21B9DB6600031B549 /* DZAdjustTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZAdjustTableView.m; sourceTree = "<group>"; };
 		6555B4D217884A6F1F47C580 /* Pods-DZAdjustFrame_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DZAdjustFrame_Tests-dummy.m"; sourceTree = "<group>"; };
 		660E9637228BC50A6F5B9DEE /* UIDeviceHardware.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDeviceHardware.m; path = Pod/Classes/UIDeviceHardware.m; sourceTree = "<group>"; };
 		690211D467DC783ACCF949CA /* Pods-DZAdjustFrame_Example-DZGeometryTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DZAdjustFrame_Example-DZGeometryTools.xcconfig"; sourceTree = "<group>"; };
@@ -426,6 +430,8 @@
 				AE9A64783B0E2ED2C5950D29 /* DZGrowLabel.m */,
 				10B0D851DB7290AF49D184E0 /* DZGrowTextView.h */,
 				485FF2641D0F1E4EE4BF1492 /* DZGrowTextView.m */,
+				650DEBE11B9DB6600031B549 /* DZAdjustTableView.h */,
+				650DEBE21B9DB6600031B549 /* DZAdjustTableView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A5971EBE2C6EB28819C8D5 /* Pods-DZAdjustFrame_Example-umbrella.h in Headers */,
+				650DEBE31B9DB6600031B549 /* DZAdjustTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +863,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650DEBE41B9DB6600031B549 /* DZAdjustTableView.m in Sources */,
 				C5725ED82182D1B53DBA00AD /* Pods-DZAdjustFrame_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
