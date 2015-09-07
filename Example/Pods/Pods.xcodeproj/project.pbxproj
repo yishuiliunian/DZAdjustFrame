@@ -28,6 +28,8 @@
 		62478C60BD74B6E4EAD42B2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF5E084B6F992631C0F28FD /* Foundation.framework */; };
 		650DEBE31B9DB6600031B549 /* DZAdjustTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 650DEBE11B9DB6600031B549 /* DZAdjustTableView.h */; };
 		650DEBE41B9DB6600031B549 /* DZAdjustTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 650DEBE21B9DB6600031B549 /* DZAdjustTableView.m */; };
+		650DEBE71B9DB73E0031B549 /* DZAdjustTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 650DEBE51B9DB73E0031B549 /* DZAdjustTableViewController.h */; };
+		650DEBE81B9DB73E0031B549 /* DZAdjustTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650DEBE61B9DB73E0031B549 /* DZAdjustTableViewController.m */; };
 		65FF5A20D016CE8B75F920F6 /* AdjustFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 228C1BC12BEB4B7EA27CFFBF /* AdjustFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6634206B7E370A9C2FE3914E /* DZGrowLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 10B097EC832E3D4F44E2E2DF /* DZGrowLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		669BEDB2C0173C91660195A8 /* DZAdjustFrame.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 994427CBE53275A4975E3209 /* DZAdjustFrame.bundle */; };
@@ -174,6 +176,8 @@
 		64D267E7C1716F40881F3AE5 /* DZGeometryTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DZGeometryTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		650DEBE11B9DB6600031B549 /* DZAdjustTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZAdjustTableView.h; sourceTree = "<group>"; };
 		650DEBE21B9DB6600031B549 /* DZAdjustTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZAdjustTableView.m; sourceTree = "<group>"; };
+		650DEBE51B9DB73E0031B549 /* DZAdjustTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZAdjustTableViewController.h; sourceTree = "<group>"; };
+		650DEBE61B9DB73E0031B549 /* DZAdjustTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZAdjustTableViewController.m; sourceTree = "<group>"; };
 		6555B4D217884A6F1F47C580 /* Pods-DZAdjustFrame_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DZAdjustFrame_Tests-dummy.m"; sourceTree = "<group>"; };
 		660E9637228BC50A6F5B9DEE /* UIDeviceHardware.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDeviceHardware.m; path = Pod/Classes/UIDeviceHardware.m; sourceTree = "<group>"; };
 		690211D467DC783ACCF949CA /* Pods-DZAdjustFrame_Example-DZGeometryTools.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DZAdjustFrame_Example-DZGeometryTools.xcconfig"; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 				485FF2641D0F1E4EE4BF1492 /* DZGrowTextView.m */,
 				650DEBE11B9DB6600031B549 /* DZAdjustTableView.h */,
 				650DEBE21B9DB6600031B549 /* DZAdjustTableView.m */,
+				650DEBE51B9DB73E0031B549 /* DZAdjustTableViewController.h */,
+				650DEBE61B9DB73E0031B549 /* DZAdjustTableViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A5971EBE2C6EB28819C8D5 /* Pods-DZAdjustFrame_Example-umbrella.h in Headers */,
+				650DEBE71B9DB73E0031B549 /* DZAdjustTableViewController.h in Headers */,
 				650DEBE31B9DB6600031B549 /* DZAdjustTableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -864,6 +871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				650DEBE41B9DB6600031B549 /* DZAdjustTableView.m in Sources */,
+				650DEBE81B9DB73E0031B549 /* DZAdjustTableViewController.m in Sources */,
 				C5725ED82182D1B53DBA00AD /* Pods-DZAdjustFrame_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
