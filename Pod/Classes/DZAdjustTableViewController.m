@@ -22,6 +22,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tableView.tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning {
