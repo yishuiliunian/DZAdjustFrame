@@ -43,9 +43,9 @@
         }
         
         if (sum > 0) {
-            self.placeHolderView.hidden = NO;
-        } else {
             self.placeHolderView.hidden = YES;
+        } else {
+            self.placeHolderView.hidden = NO;
         }
         [self setNeedsLayout];
     }
