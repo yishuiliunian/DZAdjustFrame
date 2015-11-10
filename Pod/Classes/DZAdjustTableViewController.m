@@ -15,18 +15,20 @@
 @implementation DZAdjustTableViewController
 - (void) loadView
 {
-    _tableView = [[DZAdjustTableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.view = _tableView;
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
+    self.tableView= [[DZAdjustTableView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = self.tableView;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _tableView.tableFooterView = [UIView new];
+    self.tableView.tableFooterView = [UIView new];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 @end
