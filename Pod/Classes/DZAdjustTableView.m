@@ -25,7 +25,7 @@
     if (footer) {
         footer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), footer.adjustHeight);
     }
-    
+    self.tableFooterView = footer;
 }
 
 - (void) layoutSubviews
