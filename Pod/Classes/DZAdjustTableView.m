@@ -20,6 +20,12 @@
     UIView* header = self.tableHeaderView;
     header.frame = CGRectMake(0, 0, CGRectGetWidth(header.frame), header.adjustHeight);
     self.tableHeaderView = header;
+    
+    UIView* footer = self.tableFooterView;
+    if (footer) {
+        footer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), footer.adjustHeight);
+    }
+    
 }
 
 - (void) layoutSubviews
