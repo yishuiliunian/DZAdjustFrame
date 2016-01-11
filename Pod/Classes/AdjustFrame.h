@@ -7,6 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+
+@protocol DZViewControllerAdjustProtocol <NSObject>
+@optional
+- (void) handleAdjustFrame;
+@end
+
+
+@interface UIViewController (AdjustFrame)<DZViewControllerAdjustProtocol>
+@end
+
 @interface UIView (AdjustFrame)
 @property (nonatomic, assign) CGFloat adjustHeight;
 - (BOOL) hintAdjustSupreView;

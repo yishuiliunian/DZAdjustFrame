@@ -9,12 +9,20 @@
 #import "AdjustFrame.h"
 #import <objc/runtime.h>
 
+@implementation UIViewController (AdjustFrame)
+@end
+
+
 static void* kLTAdjustFrameHeight = &kLTAdjustFrameHeight;
 @implementation UIView ( AdjustFrame)
 
 - (void) handleAdjustFrame
 {
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.superview handleAdjustFrame];
+        
+        
+    });
 }
 - (BOOL) hintAdjustSupreView
 {
@@ -38,7 +46,7 @@ static void* kLTAdjustFrameHeight = &kLTAdjustFrameHeight;
             return;
         }
     }
-
+    
     if ([self.superview respondsToSelector:@selector(handleAdjustFrame)]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.superview handleAdjustFrame];
