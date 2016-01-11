@@ -8,7 +8,31 @@
 
 #import "DZAdjustTableView.h"
 #import "AdjustFrame.h"
+@interface DZAdjustTableView ()
+@property (nonatomic,assign) BOOL notifyAjudstFrame;
+@end
+
 @implementation DZAdjustTableView
+
+- (instancetype) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (!self) {
+        return self;
+    }
+    _notifyAjudstFrame = NO;
+    return self;
+}
+
+- (instancetype) initWithFrame:(CGRect)frame style:(UITableViewStyle)style
+{
+    self = [super initWithFrame:frame style:style];
+    if (!self) {
+        return self;
+    }
+    _notifyAjudstFrame = NO;
+    return self;
+}
 
 - (BOOL) hintAdjustSupreView
 {
@@ -26,6 +50,19 @@
         footer.frame = CGRectMake(0, 0, CGRectGetWidth(self.bounds), footer.adjustHeight);
     }
     self.tableFooterView = footer;
+    [self setNeedsLayout];
+    
+    
+    if (!_notifyAjudstFrame) {
+        _notifyAjudstFrame = YES;
+        if ([self.nextResponder isKindOfClass:[UIViewController class]]) {
+            UIViewController* vc = (UIViewController*)self.nextResponder;
+            if ([vc respondsToSelector:@selector(handleAdjustFrame)]) {
+                [vc handleAdjustFrame];
+            }
+        }
+        _notifyAjudstFrame = NO;
+    }
 }
 
 - (void) layoutSubviews
@@ -42,7 +79,7 @@
         return;
     }
     if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-       NSInteger sectionCount = [self.dataSource numberOfSectionsInTableView:self];
+        NSInteger sectionCount = [self.dataSource numberOfSectionsInTableView:self];
         NSInteger sum = 0;
         for (int i = 0; i < sectionCount; i++) {
             sum += [self.dataSource tableView:self numberOfRowsInSection:i];
@@ -78,28 +115,30 @@
 {
     [super insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
     [self showPlaceHolderIfNeed];
-
+    
 }
 
 - (void) insertSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation
 {
     [super insertSections:sections withRowAnimation:animation];
     [self showPlaceHolderIfNeed];
-
+    
 }
 
 - (void) deleteRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
     [super deleteRowsAtIndexPaths:indexPaths withRowAnimation:animation];
     [self showPlaceHolderIfNeed];
-
+    
 }
 
 - (void) deleteSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation
 {
     [super deleteSections:sections withRowAnimation:animation];
     [self showPlaceHolderIfNeed];
-
+    
 }
 
 @end
+
+
