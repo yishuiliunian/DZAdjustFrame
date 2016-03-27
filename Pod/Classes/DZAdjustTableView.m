@@ -52,7 +52,6 @@
     self.tableFooterView = footer;
     [self setNeedsLayout];
     
-    
     if (!_notifyAjudstFrame) {
         _notifyAjudstFrame = YES;
         if ([self.nextResponder isKindOfClass:[UIViewController class]]) {
