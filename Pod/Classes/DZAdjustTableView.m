@@ -68,7 +68,10 @@
 {
     [super layoutSubviews];
     if (self.placeHolderView) {
-        self.placeHolderView.frame = self.bounds;
+        CGRect rect = self.bounds;
+        rect.origin.y = 0;
+        rect.size.height = CGRectGetHeight(self.bounds) - self.contentInset.bottom;
+        self.placeHolderView.frame = rect;
     }
 }
 
