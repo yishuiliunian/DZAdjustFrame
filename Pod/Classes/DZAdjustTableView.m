@@ -77,23 +77,25 @@
 
 - (void) showPlaceHolderIfNeed
 {
-    if (!self.placeHolderView) {
-        return;
-    }
-    if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-        NSInteger sectionCount = [self.dataSource numberOfSectionsInTableView:self];
-        NSInteger sum = 0;
-        for (int i = 0; i < sectionCount; i++) {
-            sum += [self.dataSource tableView:self numberOfRowsInSection:i];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!self.placeHolderView) {
+            return;
         }
-        
-        if (sum > 0) {
-            self.placeHolderView.hidden = YES;
-        } else {
-            self.placeHolderView.hidden = NO;
+        if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
+            NSInteger sectionCount = [self.dataSource numberOfSectionsInTableView:self];
+            NSInteger sum = 0;
+            for (int i = 0; i < sectionCount; i++) {
+                sum += [self.dataSource tableView:self numberOfRowsInSection:i];
+            }
+            
+            if (sum > 0) {
+                self.placeHolderView.hidden = YES;
+            } else {
+                self.placeHolderView.hidden = NO;
+            }
+            [self setNeedsLayout];
         }
-        [self setNeedsLayout];
-    }
+    });
 }
 
 - (void) setPlaceHolderView:(UIView *)placeHolderView
@@ -104,6 +106,7 @@
         if (_placeHolderView) {
             [self insertSubview:_placeHolderView atIndex:0];
         }
+        _placeHolderView.hidden = YES;
         [self setNeedsLayout];
     }
 }
