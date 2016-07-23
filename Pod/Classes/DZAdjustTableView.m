@@ -9,6 +9,9 @@
 #import "DZAdjustTableView.h"
 #import "AdjustFrame.h"
 @interface DZAdjustTableView ()
+{
+    int  _reloadCount ;
+}
 @property (nonatomic,assign) BOOL notifyAjudstFrame;
 @end
 
@@ -21,6 +24,7 @@
         return self;
     }
     _notifyAjudstFrame = NO;
+    _reloadCount = 0;
     return self;
 }
 
@@ -67,7 +71,7 @@
 - (void) layoutSubviews
 {
     [super layoutSubviews];
-    if (self.placeHolderView) {
+    if (self.placeHolderView && _reloadCount > 0) {
         CGRect rect = self.bounds;
         rect.origin.y = 0;
         rect.size.height = CGRectGetHeight(self.bounds) - self.contentInset.bottom;
@@ -113,6 +117,7 @@
 - (void) reloadData
 {
     [super reloadData];
+    _reloadCount++;
     [self showPlaceHolderIfNeed];
 }
 
