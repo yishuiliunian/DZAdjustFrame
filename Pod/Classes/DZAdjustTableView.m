@@ -25,6 +25,7 @@
     }
     _notifyAjudstFrame = NO;
     _reloadCount = 0;
+    _firstDataReady = NO;
     return self;
 }
 
@@ -71,18 +72,19 @@
 - (void) layoutSubviews
 {
     [super layoutSubviews];
-    if (self.placeHolderView && _reloadCount > 0) {
-        CGRect rect = self.bounds;
-        rect.origin.y = 0;
-        rect.size.height = CGRectGetHeight(self.bounds) - self.contentInset.bottom;
-        self.placeHolderView.frame = rect;
-    }
+    CGRect rect = self.bounds;
+    rect.origin.y = 0;
+    rect.size.height = CGRectGetHeight(self.bounds) - self.contentInset.bottom;
+    self.placeHolderView.frame = rect;
 }
 
 - (void) showPlaceHolderIfNeed
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (!self.placeHolderView) {
+            return;
+        }
+        if (_reloadCount < 1) {
+            self.placeHolderView.hidden = YES;
             return;
         }
         if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
@@ -99,7 +101,6 @@
             }
             [self setNeedsLayout];
         }
-    });
 }
 
 - (void) setPlaceHolderView:(UIView *)placeHolderView
@@ -112,6 +113,7 @@
         }
         _placeHolderView.hidden = YES;
         [self setNeedsLayout];
+        [self showPlaceHolderIfNeed];
     }
 }
 - (void) reloadData
