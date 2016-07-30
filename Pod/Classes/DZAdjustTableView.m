@@ -11,6 +11,7 @@
 @interface DZAdjustTableView ()
 {
     int  _reloadCount ;
+    BOOL _firstReload;
 }
 @property (nonatomic,assign) BOOL notifyAjudstFrame;
 @end
@@ -26,6 +27,7 @@
     _notifyAjudstFrame = NO;
     _reloadCount = 0;
     _firstDataReady = NO;
+    _firstReload = YES;
     return self;
 }
 
@@ -83,10 +85,10 @@
         if (!self.placeHolderView) {
             return;
         }
-        if (_reloadCount < 1) {
-            self.placeHolderView.hidden = YES;
-            return;
-        }
+
+    if (_firstReload) {
+        return;
+    }
         if ([self.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
             NSInteger sectionCount = [self.dataSource numberOfSectionsInTableView:self];
             NSInteger sum = 0;
@@ -121,6 +123,7 @@
     [super reloadData];
     _reloadCount++;
     [self showPlaceHolderIfNeed];
+        _firstReload = NO;
 }
 
 - (void) insertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
