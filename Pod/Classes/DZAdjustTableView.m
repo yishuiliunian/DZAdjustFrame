@@ -126,6 +126,15 @@
         _firstReload = NO;
 }
 
+- (void) scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
+{
+    [super scrollRectToVisible:rect animated:animated];
+}
+
+- (void) setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
+{
+    [super setContentOffset:contentOffset animated:animated];
+}
 - (void) insertRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation
 {
     [super insertRowsAtIndexPaths:indexPaths withRowAnimation:animation];
