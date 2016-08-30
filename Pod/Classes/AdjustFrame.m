@@ -32,7 +32,7 @@ static void* kLTAdjustFrameHeight = &kLTAdjustFrameHeight;
 {
     CGFloat height =  CGRectGetHeight(self.frame);
     NSNumber* num = objc_getAssociatedObject(self, kLTAdjustFrameHeight);
-    if (num) {
+    if (num != nil) {
         height = [num floatValue];
     }
     return height;
