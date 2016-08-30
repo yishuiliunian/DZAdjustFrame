@@ -123,7 +123,7 @@
     [super reloadData];
     _reloadCount++;
     [self showPlaceHolderIfNeed];
-        _firstReload = NO;
+    _firstReload = NO;
 }
 
 - (void) scrollRectToVisible:(CGRect)rect animated:(BOOL)animated
